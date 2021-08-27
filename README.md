@@ -57,6 +57,7 @@ protected void onCreate(Bundle savedInstanceState) {
     ...
 
     this.<MatiButton>findViewById(R.id.matiKYCButton).setParams(
+    	this,
         "CLIENT_ID", 
         "FLOW_ID", 
         "BUTTON_TITLE", 
@@ -74,6 +75,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
     ...
     
     findViewById<MatiButton>(R.id.matiKYCButton).setParams(
+    	this,
         "CLIENT_ID", 
         "FLOW_ID", 
         "BUTTON_TITLE", 
@@ -127,6 +129,7 @@ public class YourActivity extends AppCompatActivity implements MatiCallback {
         setContentView(R.layout.activity_main);
 
         this.<MatiButton>findViewById(R.id.matiKYCButton).setParams(
+    	    this,
             "CLIENT_ID", 
             "FLOW_ID", 
             "BUTTON_TITLE"
@@ -159,6 +162,7 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         findViewById<MatiButton>(R.id.matiKYCButton).setParams(
+    	    this,
             "CLIENT_ID", 
             "FLOW_ID", 
             "BUTTON_TITLE"
