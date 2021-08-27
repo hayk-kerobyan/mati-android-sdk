@@ -19,7 +19,7 @@ Enable Java 1.8 source compatibility if you haven't yet.
 
 Add this line into gradle dependencies
   
-    implementation ('com.getmati:mati-sdk:3.8.0'){
+    implementation ('com.getmati:mati-sdk:3.8.2'){
         exclude group: 'org.json', module: 'json'
     }
     
@@ -38,6 +38,8 @@ Sync project with gradle files
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        app:color="@color/matiButtonColor"
+        app:textColor="@color/matiButtonTextColor"
         app:text="YOUR CUSTOM TEXT" />
 ```
 
@@ -190,7 +192,7 @@ value: locale code of language
 
 ###### example
 
-for Spain (it can be any country, if we doesnt support language yet it will be setted to English)
+for Spain (it can be any country, if we doesn't support language yet it will be setted to English)
 
 ##### fixedLanguage: es
 
@@ -200,7 +202,27 @@ Metadata.Builder()
                 .with("fixedLanguage", "es")
                 .build())
 ```
-    
+   
+##### Set Mati button and Primary Buttons customization
+
+When using MatiSdk class to start the flow you can set primary buttons color with metadata
+
+key: buttonColor
+value: parsed color-int value
+
+key: buttonTextColor
+value: parsed color-int value
+
+###### full example
+```kotlin
+Metadata.Builder()
+                .with("buttonColor", Color.parseColor("#0097A7"))
+	    	.with("buttonTextColor", Color.parseColor("#FFFFFF"))
+                .build())
+```
+
+In case you use MatiButton, this values will be ignored and MatiButton's colors will be applied.
+
 ### Requirements 
    
 Our SDK requires Android v5.0 (API v21) or above.
